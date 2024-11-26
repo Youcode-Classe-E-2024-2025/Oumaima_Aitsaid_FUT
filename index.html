@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/style.css">
+    <title>FUT</title>
+   <link rel="stylesheet" href="src/player.css">
+</head>
+<body>
+    <div class="relative bg-[url('/assets/images/stadium_background.webp')] bg-cover bg-center min-h-screen z-10 ">
+
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+
+        <div class="relative z-10">
+
+            <header class="bg-black text-white">
+                <div class="container mx-auto flex items-center justify-between py-4 px-6">
+                  <div class="text-2xl font-bold text-yellow-400">FUT Champions</div>
+                  <nav class="hidden lg:flex space-x-6">
+                    <a href="#" class="hover:text-yellow-400">Joueurs</a>
+                    <a href="#" class="hover:text-yellow-400">Marché</a>
+                    <a href="#" class="hover:text-yellow-400">Équipes</a>
+                    <a href="#" class="hover:text-yellow-400">Solutions SBC</a>
+                    <a href="#" class="hover:text-yellow-400">Actus</a>
+                  </nav>
+                  <div class="hidden lg:flex items-center space-x-4">
+                    <input type="text" placeholder="Rechercher..." 
+                           class="px-3 py-2 w-60 rounded-md bg-slate-600 text-sm text-white focus:outline-none">
+                    
+                
+                  </div>
+                  <button class="lg:hidden text-white" id="menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                  </button>
+                </div>
+                <div id="mobile-menu" 
+                   class="lg:hidden hidden fixed inset-0 bg-black flex flex-col items-start justify-center space-y-6">
+                <a href="#" class="hover:text-yellow-400 text-xl">Joueurs</a>
+                <a href="#" class="hover:text-yellow-400 text-xl">Marché</a>
+                <a href="#" class="hover:text-yellow-400 text-xl">Équipes</a>
+                <a href="#" class="hover:text-yellow-400 text-xl">Solutions SBC</a>
+                <a href="#" class="hover:text-yellow-400 text-xl">Actus</a>
+              </div>
+              </header>
+
+             
+
+        </div>
+
+        
+
+
+    </div>
+
+
+    
+</body>
+</html>

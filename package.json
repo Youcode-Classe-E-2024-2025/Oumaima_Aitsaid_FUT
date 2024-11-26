@@ -1,0 +1,16 @@
+{
+  "name": "oumaima_aitsaid_fut",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-css":"tailwindcss build src/style.css -o public/style.css",
+    "start": "npx tailwindcss -i ./src/style.css -o ./public/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  }
+}
