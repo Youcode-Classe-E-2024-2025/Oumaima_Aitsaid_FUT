@@ -7,10 +7,10 @@
     <title>FUT</title>
    <link rel="stylesheet" href="src/player.css">
 </head>
-<body>
-    <div class="relative bg-[url('/assets/images/stadium_background.webp')] bg-cover bg-center min-h-screen z-10 ">
+<body class="">
+    <div class="relative  bg-[url('/assets/images/stadium_background.webp')] bg-cover bg-center min-h-screen z-10 ">
 
-        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class=" relative inset-0 bg-black opacity-40"></div>
 
         <div class="relative z-10">
 
@@ -28,13 +28,19 @@
                     <input type="text" placeholder="Rechercher..." 
                            class="px-3 py-2 w-60 rounded-md bg-slate-600 text-sm text-white focus:outline-none">
                     
-                
+                  
                   </div>
+                <button onclick="addPlayer()" class=" text-white" >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button>
                   <button class="lg:hidden text-white" id="menu-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                   </button>
+               
                 </div>
                 <div id="mobile-menu" 
                    class="lg:hidden hidden fixed inset-0 bg-black flex flex-col items-start justify-center space-y-6">
@@ -81,13 +87,139 @@
               </div>
 
         </div>
+        <section class="  hidden modalContainer  ">
+            <div id="addForm" class="w-2/3 lg:w-1/2 bg-black rounded-lg p-4 text-white">
+                <div class="flex justify-between">
+                    <h2 class="text-center text-2xl font-bold mb-4">ADD A PLAYER</h2>
+                    <button id="closeAdd" onclick="addPlayer()" class="iconBtn">close</button>
+                </div>
+                <form class="flex flex-col gap-4">
+                    <!-- Info Column -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col">
+                            <label for="name" class="mb-1 text-sm font-semibold">Player Name</label>
+                            <input type="text" id="nameInput" placeholder="Enter player name" class="input ">
+                        </div>
 
+                        <div class="flex flex-col">
+                            <label for="nationality" class="mb-1 text-sm font-semibold">Nationality</label>
+                            <input type="text" id="natioInput" placeholder="Enter nationality" class="input">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="club" class="mb-1 text-sm font-semibold">Club Name</label>
+                            <input type="text" id="clubInput" placeholder="Enter club name" class="input ">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="position" class="mb-1 text-sm font-semibold">Position</label>
+                            <select class="input h-10" name="position" id="positionInput">
+                                <option value="ST">ST</option>
+                                <option value="LM">LM</option>
+                                <option value="CM">CM</option>
+                                <option value="RM">RM</option>
+                                <option value="LB">LB</option>
+                                <option value="CB">CB</option>
+                                <option value="RB">RB</option>
+                                <option value="GK">GK</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Images Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex flex-col">
+                            <label for="player-photo" class="mb-1 text-sm font-semibold">Player Photo</label>
+                            <input type="file" id="photoInput" class="input">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="club-photo" class="mb-1 text-sm font-semibold">Club Logo</label>
+                            <input type="file" id="clubImageInput" class="input">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="flag-photo" class="mb-1 text-sm font-semibold">National Flag</label>
+                            <input type="file" id="flagImageInput" class="input w-full">
+                        </div>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex flex-col">
+                            <label for="pace" class="mb-1 text-sm font-semibold">Pace</label>
+                            <input type="number" id="paceInput" placeholder="Pace (0-100)" class="input" min="0"
+                                max="100">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="shooting" class="mb-1 text-sm font-semibold">Shooting</label>
+                            <input type="number" id="shootingInput" placeholder="Shooting (0-100)" class="input" min="0"
+                                max="100">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="passing" class="mb-1 text-sm font-semibold">Passing</label>
+                            <input type="number" id="passingInput" placeholder="Passing (0-100)" class="input" min="0"
+                                max="100">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="Dribbling" class="mb-1 text-sm font-semibold">Dribbling</label>
+                            <input type="number" id="dribblingInput" placeholder="Dribbling (0-100)" class="input"
+                                min="0" max="100">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="Defending" class="mb-1 text-sm font-semibold">Defending</label>
+                            <input type="number" id="defendingInput" placeholder="Defending (0-100)" class="input"
+                                min="0" max="100">
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="Physical" class="mb-1 text-sm font-semibold">Physical</label>
+                            <input type="number" id="physicalInput" placeholder="Physical (0-100)" class="input" min="0"
+                                max="100">
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="rating" class="mb-1 text-sm font-semibold">Rating</label>
+                            <input type="number" id="ratingInput" placeholder="Rating (0-100)" class="input" min="0"
+                                max="100">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="flex justify-center mt-4">
+                        <button id="addBtn" class="submitBtn">
+                            Submit Player
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
         
 
-
+        
     </div>
+     <!-- ADD FORM -->
+     
 
 
     
 </body>
+<script>
+   const addForm = document.getElementById('addForm');
+const modalContainer = document.querySelector('.modalContainer');
+const closeAdd = document.getElementById('closeAdd');
+
+
+function addPlayer() {
+    
+    modalContainer.classList.toggle('hidden');
+    
+    document.body.classList.toggle('page-opacity');
+    
+}
+
+</script>
 </html>
