@@ -17,6 +17,22 @@
     position: relative;
   
   }
+  .player-card::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Ensures it spans the entire card */
+    border-radius: 12px; /* Matches the card's rounded corners */
+    background: linear-gradient(90deg, rgba(255, 223, 0, 0.8), rgba(255, 200, 0, 0.5), rgba(255, 223, 0, 0.8));
+    z-index: -1; /* Places the glow behind the card content */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Initially invisible */
+    transform: scale(1.2); /* Slightly larger to create the "glow" effect */
+  }
+  .player-card:hover::before {
+    opacity: 1; /* Makes the border visible on hover */
+    transform: scale(1); /* Matches the card size exactly */
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Adds a subtle glowing effect */
+  }
     .formation-container {
     display: grid;
     height: 80%;
@@ -29,6 +45,13 @@
     
     }
   
+    .SubstitutionContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  /* Auto fit with a minimum size of 100px per card */
+        gap: 10px;  /* Adjust spacing between the cards */
+        justify-items: center;  /* Align cards in the center */
+        max-width: 700px;
+      }
    
   .no-scroll {
       overflow: hidden;

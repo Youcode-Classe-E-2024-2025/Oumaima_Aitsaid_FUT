@@ -12,30 +12,129 @@ document.getElementById('formationSelect').addEventListener('change', function (
             if (formation === '4-4-2') {
                 // 4-4-2 Formation
                 formationContainer.innerHTML = `
-                    <div class="player-card col-start-2 row-start-1">ST</div>
-                    <div class="player-card col-start-1 row-start-2">LM</div>
-                    <div class="player-card col-start-2 row-start-2">CM</div>
-                    <div class="player-card col-start-3 row-start-2">CM</div>
-                    <div class="player-card col-start-3 row-start-1">ST</div>
-                    <div class="player-card col-start-4 row-start-2">RM</div>
-                    <div class="player-card col-start-1 row-start-3">LB</div>
-                    <div class="player-card col-start-2 row-start-3">CB</div>
-                    <div class="player-card col-start-3 row-start-3">CB</div>
-                    <div class="player-card col-start-4 row-start-3">RB</div>
+                    <div class="player-card col-start-2 row-start-1">ST
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-1 row-start-2">LM
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-2 row-start-2">CM
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-3 row-start-2">CM
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-3 row-start-1">ST
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-4 row-start-2">RM
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-1 row-start-3">LB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-2 row-start-3">CB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-3 row-start-3">CB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-4 row-start-3">RB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
                 `;
             } else if (formation === '4-3-3') {
                 // 4-3-3 Formation
                 formationContainer.innerHTML = `
-                    <div class="player-card col-start-2 row-start-1">LW</div>
-                    <div class="player-card col-start-3 row-start-1">ST</div>
-                    <div class="player-card col-start-4 row-start-1">RW</div>
-                    <div class="player-card col-start-2 row-start-2">CM</div>
-                    <div class="player-card col-start-3 row-start-2">CM</div>
-                    <div class="player-card col-start-4 row-start-2">CM</div>
-                    <div class="player-card col-start-1 row-start-3">LB</div>
-                    <div class="player-card col-start-2 row-start-3">CB</div>
-                    <div class="player-card col-start-3 row-start-3">CB</div>
-                    <div class="player-card col-start-4 row-start-3">RB</div>
+                    <div class="player-card col-start-2 row-start-1">LW<button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-3 row-start-1">ST
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-4 row-start-1">RW
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-2 row-start-2">CM
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-3 row-start-2">CM
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-4 row-start-2">CM
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-1 row-start-3">LB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-2 row-start-3">CB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-3 row-start-3">CB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
+                    <div class="player-card col-start-4 row-start-3">RB
+                    <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button></div>
                 `;
             }
 
