@@ -56,6 +56,12 @@
                 <div class="bg-[url('/assets/images/field-bg.webp')] tilt  w-[750px] h-[500px] bg-cover bg-center ">
 
                     <div class="formation-container">
+                        <div class="player-card col-start-2 row-start-1">ST<button onclick="addPlayerCars()" class=" add-player-card-btn text-white "  >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                              </svg>
+                            </button>
+                        </div>
                         <div class="player-card col-start-2 row-start-1">ST</div>
                         <div class="player-card col-start-1 row-start-2">LM</div>
                         <div class="player-card col-start-2 row-start-2">CM</div>
@@ -87,14 +93,14 @@
               </div>
 
         </div>
-        <section class="  hidden modalContainer  ">
+        <section class="  fixed inset-0 flex justify-center items-center modalContainer bg-black/60 z-50 hidden  ">
             <div id="addForm" class="w-2/3 lg:w-1/2 bg-black rounded-lg p-4 text-white">
                 <div class="flex justify-between">
                     <h2 class="text-center text-2xl font-bold mb-4">ADD A PLAYER</h2>
                     <button id="closeAdd" onclick="addPlayer()" class="iconBtn">close</button>
                 </div>
-                <form class="flex flex-col gap-4">
-                    <!-- Info Column -->
+                <form class="flex flex-col gap-4 text-black">
+                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="flex flex-col">
                             <label for="name" class="mb-1 text-sm font-semibold">Player Name</label>
@@ -126,7 +132,7 @@
                         </div>
                     </div>
 
-                    <!-- Images Section -->
+                   
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="flex flex-col">
                             <label for="player-photo" class="mb-1 text-sm font-semibold">Player Photo</label>
@@ -144,7 +150,7 @@
                         </div>
                     </div>
 
-                    <!-- Stats Section -->
+                   
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="flex flex-col">
                             <label for="pace" class="mb-1 text-sm font-semibold">Pace</label>
@@ -188,7 +194,7 @@
                         </div>
                     </div>
 
-                    <!-- Submit Button -->
+                    
                     <div class="flex justify-center mt-4">
                         <button id="addBtn" class="submitBtn">
                             Submit Player
@@ -201,7 +207,7 @@
 
         
     </div>
-     <!-- ADD FORM -->
+   
      
 
 
@@ -222,4 +228,6 @@ function addPlayer() {
 }
 
 </script>
+<script src="formation.js"></script>
+
 </html>

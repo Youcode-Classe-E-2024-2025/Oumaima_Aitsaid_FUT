@@ -4,8 +4,8 @@
   }
   .player-card {
     margin: auto;
-    height: 10rem;
-    width: 10rem;
+    height: 8rem;
+    width: 8rem;
     background-image: url('../assets/images/card.webp');
     background-size: contain;
     background-position: top;
@@ -14,10 +14,12 @@
     text-align: center;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    position: relative;
+  
   }
     .formation-container {
     display: grid;
-    height: 90%;
+    height: 80%;
     width: 100%;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
@@ -26,41 +28,40 @@
     gap: 1rem;
     
     }
-    .modalContainer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.6); 
-        z-index: 20;
-    }
-/*    
-
-
-
-#addForm {
-    background-color: black;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;  
-    max-width: 600px; 
-}
-
-
-
-
-
-.page-opacity {
-    opacity: 0.3;
-}
-@media (max-width: 768px) {
+  
+   
+  .no-scroll {
+      overflow: hidden;
+  }
+  
+  .add-player-card-btn {
+    position: absolute;
+    top: 50%; /* Move the button to the vertical center */
+    left: 50%; /* Move the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Offset for perfect centering */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .add-player-card-btn:hover {
+    transform: translate(-50%, -50%) scale(1.2); /* Slight zoom effect */
+  }
+  
+  .add-player-card-btn svg {
+    stroke: #fff;
+  }
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
     #addForm {
         width: 90%;
         max-width: none;
         padding: 15px;
     }
-} */
+  }
