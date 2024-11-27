@@ -99,27 +99,27 @@
                     <h2 class="text-center text-2xl font-bold mb-4">ADD A PLAYER</h2>
                     <button id="closeAdd" onclick="addPlayer()" class="iconBtn">close</button>
                 </div>
-                <form class="flex flex-col gap-4 text-black">
+                <form id ="addPlayerForm" class="flex flex-col gap-4 text-black">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="flex flex-col">
                             <label for="name" class="mb-1 text-sm font-semibold">Player Name</label>
-                            <input type="text" id="nameInput" placeholder="Enter player name" class="input ">
+                            <input type="text" id="name" placeholder="Enter player name" class="input ">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="nationality" class="mb-1 text-sm font-semibold">Nationality</label>
-                            <input type="text" id="natioInput" placeholder="Enter nationality" class="input">
+                            <input type="text" id="nationality" placeholder="Enter nationality" class="input">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="club" class="mb-1 text-sm font-semibold">Club Name</label>
-                            <input type="text" id="clubInput" placeholder="Enter club name" class="input ">
+                            <input type="text" id="club" placeholder="Enter club name" class="input ">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="position" class="mb-1 text-sm font-semibold">Position</label>
-                            <select class="input h-10" name="position" id="positionInput">
+                            <select class="input h-10" name="position" id="position">
                                 <option value="ST">ST</option>
                                 <option value="LM">LM</option>
                                 <option value="CM">CM</option>
@@ -136,17 +136,19 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="flex flex-col">
                             <label for="player-photo" class="mb-1 text-sm font-semibold">Player Photo</label>
-                            <input type="file" id="photoInput" class="input">
+                            <input type="url" id="photo" placeholder="Enter player photo URL" class="input">
                         </div>
-
+                        
+                        
+                       
                         <div class="flex flex-col">
                             <label for="club-photo" class="mb-1 text-sm font-semibold">Club Logo</label>
-                            <input type="file" id="clubImageInput" class="input">
+                            <input type="url" id="logo" placeholder="Enter club logo URL" class="input">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="flag-photo" class="mb-1 text-sm font-semibold">National Flag</label>
-                            <input type="file" id="flagImageInput" class="input w-full">
+                            <input type="url" id="flag" placeholder="Enter national flag URL" class="input">
                         </div>
                     </div>
 
@@ -154,49 +156,49 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="flex flex-col">
                             <label for="pace" class="mb-1 text-sm font-semibold">Pace</label>
-                            <input type="number" id="paceInput" placeholder="Pace (0-100)" class="input" min="0"
+                            <input type="number" id="pace" placeholder="Pace (0-100)" class="input" min="0"
                                 max="100">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="shooting" class="mb-1 text-sm font-semibold">Shooting</label>
-                            <input type="number" id="shootingInput" placeholder="Shooting (0-100)" class="input" min="0"
+                            <input type="number" id="shooting" placeholder="Shooting (0-100)" class="input" min="0"
                                 max="100">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="passing" class="mb-1 text-sm font-semibold">Passing</label>
-                            <input type="number" id="passingInput" placeholder="Passing (0-100)" class="input" min="0"
+                            <input type="number" id="passing" placeholder="Passing (0-100)" class="input" min="0"
                                 max="100">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="Dribbling" class="mb-1 text-sm font-semibold">Dribbling</label>
-                            <input type="number" id="dribblingInput" placeholder="Dribbling (0-100)" class="input"
+                            <input type="number" id="dribbling" placeholder="Dribbling (0-100)" class="input"
                                 min="0" max="100">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="Defending" class="mb-1 text-sm font-semibold">Defending</label>
-                            <input type="number" id="defendingInput" placeholder="Defending (0-100)" class="input"
+                            <input type="number" id="defending" placeholder="Defending (0-100)" class="input"
                                 min="0" max="100">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="Physical" class="mb-1 text-sm font-semibold">Physical</label>
-                            <input type="number" id="physicalInput" placeholder="Physical (0-100)" class="input" min="0"
+                            <input type="number" id="physical" placeholder="Physical (0-100)" class="input" min="0"
                                 max="100">
                         </div>
                         <div class="flex flex-col">
                             <label for="rating" class="mb-1 text-sm font-semibold">Rating</label>
-                            <input type="number" id="ratingInput" placeholder="Rating (0-100)" class="input" min="0"
+                            <input type="number" id="rating" placeholder="Rating (0-100)" class="input" min="0"
                                 max="100">
                         </div>
                     </div>
 
                     
                     <div class="flex justify-center mt-4">
-                        <button id="addBtn" class="submitBtn">
+                        <button id="addBtn" type ="submit" class="submitBtn" onclick="downloadUpdatedPlayers()">
                             Submit Player
                         </button>
                     </div>
@@ -213,21 +215,19 @@
 
     
 </body>
-<script>
-   const addForm = document.getElementById('addForm');
-const modalContainer = document.querySelector('.modalContainer');
-const closeAdd = document.getElementById('closeAdd');
-
-
-function addPlayer() {
+<script>const addForm = document.getElementById('addForm');
+    const modalContainer = document.querySelector('.modalContainer');
+    const closeAdd = document.getElementById('closeAdd');
     
-    modalContainer.classList.toggle('hidden');
     
-    document.body.classList.toggle('page-opacity');
-    
-}
-
-</script>
+    function addPlayer() {
+        
+        modalContainer.classList.toggle('hidden');
+        
+        document.body.classList.toggle('page-opacity');
+        
+    }</script>
+<script type="module" src="main.js"></script>
 <script src="formation.js"></script>
 
 </html>
