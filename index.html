@@ -242,10 +242,78 @@
             </div>
         </section>    
         <!-- add section the list player -->
-        
+        <section class=" fixed inset-0 flex justify-center items-center playerlistContainer bg-black/60 z-50 hidden ">
+            <div id="playerlist" class=" w-2/3 lg:w-1/2 bg-black rounded-lg p-4 text-white ">
+                <div class="flex justify-between">
+                    <h2 class="text-center text-2xl font-bold mb-4">CHOOSE A PLAYER</h2>
+                    <button id="closeAdd" onclick="addPlayerCard()" class="iconBtn">close</button>
+                </div>
+                <div class="hidden lg:flex items-center space-x-4">
+                    <input type="text" placeholder="Rechercher..." class="px-3 py-2 w-60 rounded-md bg-slate-600 text-sm text-white focus:outline-none">
+                    
+                </div>
+            </div>
+        </section> 
     </div>  
     <!-- add section the substitution -->
-    
+    <section>
+        <h2 class="text-white m-8">SUBSTITUTION</h2>
+        
+            <div class="SubstitutionContainer">
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
+                <!-- Add more cards as needed -->
+            </div>
+        
+    </section>
 </body>
 <script>const addForm = document.getElementById('addForm');
     const modalContainer = document.querySelector('.modalContainer');
