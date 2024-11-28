@@ -196,6 +196,93 @@ window.editPlayer = function (index) {
       defending: Number(document.getElementById("editDefending").value),
       physical: Number(document.getElementById("editPhysical").value),
     };
+  
+  let nameEdit = document.getElementById("editName").value;
+  let positionEdit = document.getElementById("editPosition").value;
+  let nationalityEdit = document.getElementById("editNationality").value;
+  let photoUrlEdit = document.getElementById("editPhoto").value;
+  let flagUrlEdit = document.getElementById("editFlag").value;
+  let logoUrlEdit = document.getElementById("editLogo").value;
+  let ratingEdit = document.getElementById("editRating").value;
+  let paceEdit = document.getElementById("editPace").value;
+  let shootingEdit = document.getElementById("editShooting").value;
+  let dribblingEdit = document.getElementById("editDribbling").value;
+  let defendingEdit = document.getElementById("editDefending").value;
+  let physicalEdit = document.getElementById("editPhysical").value;
+
+
+  let nameRegex = /^[a-zA-Z\s]+$/;  
+  let positionRegex = /^[a-zA-Z\s]+$/;  
+  let nationalityRegex = /^[a-zA-Z\s]+$/;  
+  let urlRegex = /^https?:\/\/.*$/;  
+
+  
+  let numberRangeRegex = /^(?:100|[1-9]?\d)$/;
+
+  
+  if (!nameRegex.test(nameEdit)) {
+    alert("Invalid player name. Only letters and spaces are allowed.");
+    return;
+  }
+
+  if (!positionRegex.test(positionEdit)) {
+    alert("Invalid position. Only letters and spaces are allowed.");
+    return;
+  }
+
+  if (!nationalityRegex.test(nationalityEdit)) {
+    alert("Invalid nationality. Only letters and spaces are allowed.");
+    return;
+  }
+
+  if (!urlRegex.test(photoUrlEdit)) {
+    alert("Invalid photo URL. It should point to a valid image (JPG, JPEG, PNG, GIF).");
+    return;
+  }
+
+  if (!urlRegex.test(flagUrlEdit)) {
+    alert("Invalid flag URL. It should point to a valid image (JPG, JPEG, PNG, GIF).");
+    return;
+  }
+
+  if (!urlRegex.test(logoUrlEdit)) {
+    alert("Invalid logo URL. It should point to a valid image (JPG, JPEG, PNG, GIF).");
+    return;
+  }
+
+  if (!numberRangeRegex.test(ratingEdit) || ratingEdit < 1 || ratingEdit > 100) {
+    alert("Invalid rating. It should be a number between 1 and 100.");
+    return;
+  }
+
+  if (!numberRangeRegex.test(paceEdit) || paceEdit < 0 || paceEdit > 100) {
+    alert("Invalid pace. It should be a number between 0 and 100.");
+    return;
+  }
+
+  if (!numberRangeRegex.test(shootingEdit) || shootingEdit < 0 || shootingEdit > 100) {
+    alert("Invalid shooting. It should be a number between 0 and 100.");
+    return;
+  }
+
+  if (!numberRangeRegex.test(dribblingEdit) || dribblingEdit < 0 || dribblingEdit > 100) {
+    alert("Invalid dribbling. It should be a number between 0 and 100.");
+    return;
+  }
+
+  if (!numberRangeRegex.test(defendingEdit) || defendingEdit < 0 || defendingEdit > 100) {
+    alert("Invalid defending. It should be a number between 0 and 100.");
+    return;
+  }
+
+  if (!numberRangeRegex.test(physicalEdit) || physicalEdit < 0 || physicalEdit > 100) {
+    alert("Invalid physical. It should be a number between 0 and 100.");
+    return;
+  }
+
+
+
+
     localStorage.setItem("players", JSON.stringify(playersData));
     SeeAllplayer();
     editPlayerFormModal.classList.add("hidden");
