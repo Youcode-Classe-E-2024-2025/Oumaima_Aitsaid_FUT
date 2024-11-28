@@ -20,11 +20,11 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
  // validate for with regix
 
 
-  const regexname = /^[A-Za-z\s]+$/;
-  const regexurl = /^https?:\/\/.*$/;
+  let regexname = /^[A-Za-z\s]+$/;
+ let regexurl = /^https?:\/\/.*$/;
 
   if (!regexname.test(name)) {
-    alert("Player name can only contain letters and spaces.");
+    alert("Player name can only contain letters and spaces");
     return;
   }
 
@@ -34,40 +34,40 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
   }
 
   if (!regexurl.test(photo)) {
-    alert("Please enter a valid photo URL.");
+    alert("Please enter a valid photo ");
     return;
   }
 
   if (!regexurl.test(logo)) {
-    alert("Please enter a valid logo URL.");
+    alert("Please enter a valid logo URL");
     return;
   }
 
   if (!regexurl.test(flag)) {
-    alert("Please enter a valid flag URL.");
+    alert("Please enter a valid flag url");
     return;
   }
 
   if (pace < 0 || pace > 100) {
-    alert("Pace must be between 0 and 100.");
+    alert("Pace must be between 0 and 100");
     return;
   }
 
   if (shooting < 0 || shooting > 100) {
-    alert("Shooting must be between 0 and 100.");
+    alert("Shooting must be between 0 and 100");
     return;
   }
 
   if (dribbling < 0 || dribbling > 100) {
-    alert("dribbling must be between 0 and 100.")
+    alert("dribbling must be between 0 and 100")
   }
 
   if (defending < 0 || defending > 100) {
-    alert("defending must be between 0 and 100.")
+    alert("defending must be between 0 and 100")
   }
 
   if (physical < 0 || physical > 100) {
-    alert("physical must be between 0 and 100.")
+    alert("physical must be between 0 and 100")
   }
 
   const newPlayer = {
@@ -212,7 +212,7 @@ window.editPlayer = function (index) {
 
 
   let nameRegex = /^[a-zA-Z\s]+$/;  
-  let positionRegex = /^[a-zA-Z\s]+$/;  
+  let positionRegex = /^(ST|LM|CM|RM|LB|RB|GK)$/;  
   let nationalityRegex = /^[a-zA-Z\s]+$/;  
   let urlRegex = /^https?:\/\/.*$/;  
 
@@ -226,7 +226,7 @@ window.editPlayer = function (index) {
   }
 
   if (!positionRegex.test(positionEdit)) {
-    alert("Invalid position. Only letters and spaces are allowed.");
+    alert(" choice just ST or LM or CM or RM or LB or RB or GK");
     return;
   }
 
