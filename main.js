@@ -2,6 +2,7 @@ const openform = document.getElementById("openModal");
 const closeform = document.getElementById("closeModal");
 const playerform = document.getElementById("playerModal");
 const formPlayersDisplay = document.getElementById("modalPlayersDisplay");
+//fetch json
 fetch('players.json')
   .then(response => response.json())
   .then(data => {
@@ -12,6 +13,7 @@ fetch('players.json')
   })
   .catch(error => console.error('Error:', error));
 
+  //fnt add player
 document.getElementById("addPlayerForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -84,19 +86,17 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
     defending: Number(document.getElementById("defending").value),
     physical: Number(document.getElementById("physical").value),
   };
-
+//local storage
   const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
 
   playersData.players.push(newPlayer);
 
   localStorage.setItem("players", JSON.stringify(playersData));
-
-
   document.getElementById("addPlayerForm").reset();
 
 });
 
-
+//Fnct seeAll Player
 function SeeAllplayer() {
   const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
   formPlayersDisplay.innerHTML = "";
@@ -134,12 +134,10 @@ function SeeAllplayer() {
   });
 }
 
-
 openform.addEventListener("click", () => {
   SeeAllplayer();
   playerform.classList.remove("hidden");
 });
-
 
 closeform.addEventListener("click", () => {
   playerform.classList.add("hidden");
@@ -150,6 +148,7 @@ playerform.addEventListener("click", (e) => {
     playerform.classList.add("hidden");
   }
 });
+//fucntion remove player
 
 window.removePlayer = function (index) {
     const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };

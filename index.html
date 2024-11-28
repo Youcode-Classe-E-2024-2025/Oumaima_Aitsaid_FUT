@@ -164,35 +164,35 @@
        
       </div>
     </div>
-         
+  
         </div>
         <!-- Edit Player Form -->
-<div id="editPlayerForm" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center ">
+
+         <div id="editPlayerForm" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden ">
     <div class="bg-white w-11/12 md:w-3/4 lg:w-1/2 rounded-lg shadow-lg p-6">
       <div class="flex justify-between items-center border-b pb-2">
         <h2 class="text-xl font-bold">Edit Player</h2>
         <button id="closeEditForm" class="text-gray-500 hover:text-red-500">&times;</button>
       </div>
-      <form id="editPlayerForm" class="mt-4">
-        <input type="text" id="editName" placeholder="Player Name" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="text" id="editPosition" placeholder="Position" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="text" id="editNationality" placeholder="Nationality" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="url" id="editPhoto" placeholder="Photo URL" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="url" id="editFlag" placeholder="Flag URL" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="url" id="editLogo" placeholder="Club Logo URL" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="number" id="editRating" placeholder="Rating (1-100)" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="number" id="editPace" placeholder="Pace (0-100)" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="number" id="editShooting" placeholder="Shooting (0-100)" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="number" id="editDribbling" placeholder="Dribbling (0-100)" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="number" id="editDefending" placeholder="Defending (0-100)" class="w-full border rounded px-3 py-2 mb-3" required>
-        <input type="number" id="editPhysical" placeholder="Physical (0-100)" class="w-full border rounded px-3 py-2 mb-3" required>
-        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Save Changes</button>
+      <form id="EditPlayerForm" class="bg-white rounded-md shadow-md  space-y-2">
+          <input type="text" id="editName" placeholder="Player Name" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+          <input type="text" id="editPosition" placeholder="Position" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+          <input type="text" id="editNationality" placeholder="Nationality" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="url" id="editPhoto" placeholder="Photo URL" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="url" id="editFlag" placeholder="Flag URL" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="url" id="editLogo" placeholder="Club Logo URL" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="number" id="editRating" placeholder="Rating (1-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="number" id="editPace" placeholder="Pace (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="number" id="editShooting" placeholder="Shooting (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="number" id="editDribbling" placeholder="Dribbling (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="number" id="editDefending" placeholder="Defending (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <input type="number" id="editPhysical" placeholder="Physical (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+        <button type="submit" id="btnedit" class="w-full bg-yellow-500 text-white text-sm py-2 rounded hover:bg-yellow-600">Save Changes</button>
       </form>
     </div>
   </div>
-  
        
-     <section class="  fixed inset-0 flex sha justify-center items-center modalContainer bg-black/60 z-50 hidden  ">
+     <section class="  fixed inset-0 flex justify-center items-center modalContainer bg-black/60 z-50 hidden  ">
             <div id="addForm" class="w-2/3 lg:w-1/2 bg-black rounded-lg p-4 text-white">
                 <div class="flex justify-between">
                     <h2 class="text-center text-2xl font-bold mb-4">ADD A PLAYER</h2>
