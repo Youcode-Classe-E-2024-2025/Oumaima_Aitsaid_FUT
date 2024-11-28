@@ -97,3 +97,47 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
 });
 
 
+function SeeAllplayer() {
+  const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
+  formPlayersDisplay.innerHTML = "";
+  playersData.players.forEach((player, index) => {
+    const playerCard = document.createElement("div");
+    playerCard.classList.add(
+      "border",
+      "border-gray-300",
+      "rounded",
+      "p-4",
+      "bg-gray-50",
+      "shadow-sm",
+      "text-center"
+    );
+    playerCard.innerHTML = `
+      <img class="w-24 h-24 mx-auto rounded-full" src="${player.photo}" alt="${player.name}">
+      <h3 class="text-lg font-semibold mt-2">${player.name}</h3>
+      <p class="text-sm text-gray-600">Position: ${player.position}</p>
+      <p class="text-sm text-gray-600">Rating: ${player.rating}</p>
+      <p class="text-sm text-gray-600">Nationality: ${player.nationality}</p>
+        
+    `;
+    formPlayersDisplay.appendChild(playerCard);
+  });
+}
+
+
+openform.addEventListener("click", () => {
+  SeeAllplayer();
+  playerform.classList.remove("hidden");
+});
+
+
+closeform.addEventListener("click", () => {
+  playerform.classList.add("hidden");
+});
+
+playerform.addEventListener("click", (e) => {
+  if (e.target === playerform) {
+    playerform.classList.add("hidden");
+  }
+});
+
+
