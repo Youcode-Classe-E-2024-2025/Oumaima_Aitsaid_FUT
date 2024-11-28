@@ -151,4 +151,11 @@ playerform.addEventListener("click", (e) => {
   }
 });
 
+window.removePlayer = function (index) {
+    const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
+    playersData.players.splice(index, 1);
+    localStorage.setItem("players", JSON.stringify(playersData));
+    console.log(playersData.players)
+    SeeAllplayer();
+  }
 
