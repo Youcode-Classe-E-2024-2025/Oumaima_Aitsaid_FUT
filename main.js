@@ -117,7 +117,18 @@ function SeeAllplayer() {
       <p class="text-sm text-gray-600">Position: ${player.position}</p>
       <p class="text-sm text-gray-600">Rating: ${player.rating}</p>
       <p class="text-sm text-gray-600">Nationality: ${player.nationality}</p>
-        
+         <button 
+        class="mt-3 bg-red-500 text-white text-sm py-1 px-3 rounded hover:bg-red-600 transition"
+        onclick="removePlayer(${index})"
+      >
+        Remove
+      </button>
+      <button 
+        class="mt-3 bg-blue-500 text-white text-sm py-1 px-3 rounded hover:bg-blue-600 transition"
+        onclick="editPlayer(${index})"
+      >
+        Edit
+      </button>
     `;
     formPlayersDisplay.appendChild(playerCard);
   });
