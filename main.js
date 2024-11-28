@@ -158,3 +158,51 @@ window.removePlayer = function (index) {
     SeeAllplayer();
   }
 
+//get element By id edit Player
+const editPlayerFormModal = document.getElementById("editPlayerForm");
+const closeEditForm = document.getElementById("closeEditForm");
+const editForm = document.getElementById("editPlayerForm");
+//fuct edit player
+window.editPlayer = function (index) {
+  const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
+  const player = playersData.players[index];
+  document.getElementById("editName").value = player.name;
+  document.getElementById("editPosition").value = player.position;
+  document.getElementById("editNationality").value = player.nationality;
+  document.getElementById("editPhoto").value = player.photo;
+  document.getElementById("editFlag").value = player.flag;
+  document.getElementById("editLogo").value = player.logo;
+  document.getElementById("editRating").value = player.rating;
+  document.getElementById("editPace").value = player.pace;
+  document.getElementById("editShooting").value = player.shooting;
+  document.getElementById("editDribbling").value = player.dribbling;
+  document.getElementById("editDefending").value = player.defending;
+  document.getElementById("editPhysical").value = player.physical;
+  editPlayerFormModal.classList.remove("hidden");
+  
+  editForm.onsubmit = function (e) {
+    e.preventDefault();
+    playersData.players[index] = {
+      name: document.getElementById("editName").value,
+      position: document.getElementById("editPosition").value,
+      nationality: document.getElementById("editNationality").value,
+      photo: document.getElementById("editPhoto").value,
+      flag: document.getElementById("editFlag").value,
+      logo: document.getElementById("editLogo").value,
+      rating: Number(document.getElementById("editRating").value),
+      pace: Number(document.getElementById("editPace").value),
+      shooting: Number(document.getElementById("editShooting").value),
+      dribbling: Number(document.getElementById("editDribbling").value),
+      defending: Number(document.getElementById("editDefending").value),
+      physical: Number(document.getElementById("editPhysical").value),
+    };
+    localStorage.setItem("players", JSON.stringify(playersData));
+    SeeAllplayer();
+    editPlayerFormModal.classList.add("hidden");
+    displayPlayersInModal(); 
+  };
+}
+//close formul edit
+closeEditForm.addEventListener("click", () => {
+  editPlayerFormModal.classList.add("hidden");
+});
