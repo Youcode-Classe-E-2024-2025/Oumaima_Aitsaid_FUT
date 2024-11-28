@@ -1,9 +1,12 @@
-
+const openform = document.getElementById("openModal");
+const closeform = document.getElementById("closeModal");
+const playerform = document.getElementById("playerModal");
+const formPlayersDisplay = document.getElementById("modalPlayersDisplay");
 fetch('players.json')
   .then(response => response.json())
   .then(data => {
     if (!localStorage.getItem('players')) {
-      localStorage.setItem('players', JSON.stringify(data)); 
+      localStorage.setItem('players', JSON.stringify(data));
       console.log('Players loaded:', data);
     }
   })
@@ -12,7 +15,7 @@ fetch('players.json')
 document.getElementById("addPlayerForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  //validate for with regix
+ // validate for with regix
 
 
   const regexname = /^[A-Za-z\s]+$/;
@@ -53,15 +56,15 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
     return;
   }
 
-  if (dribbling < 0 || dribbling >100){
+  if (dribbling < 0 || dribbling > 100) {
     alert("dribbling must be between 0 and 100.")
   }
 
-  if (defending < 0 || defending >100){
+  if (defending < 0 || defending > 100) {
     alert("defending must be between 0 and 100.")
   }
 
-  if (physical < 0 || physical >100){
+  if (physical < 0 || physical > 100) {
     alert("physical must be between 0 and 100.")
   }
 
@@ -83,7 +86,7 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
   };
 
   const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
- 
+
   playersData.players.push(newPlayer);
 
   localStorage.setItem("players", JSON.stringify(playersData));
@@ -92,3 +95,5 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
   document.getElementById("addPlayerForm").reset();
 
 });
+
+

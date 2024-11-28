@@ -144,10 +144,31 @@
                     </select>
                     <p>TOTAL CHEMISTRY</p>
                     <p class="text-yellow-500">100%</p>
+                    <button id="openModal" class="bg-yellow-500 text-white py-2 px-4 rounded">
+                        View All Players
+                      </button>
                 </div>
-              </div>
+                
+
+  
+  <!-- Modal Structure -->
+  
+  </div>
+  <div id="playerModal" class="fixed inset-0 bg-black bg-opacity-50  flex items-center justify-center hidden">
+    <div class="bg-white w-11/12 md:w-3/4 lg:w-1/2 rounded-lg shadow-lg p-6">
+      <div class="flex justify-between items-center border-b pb-2">
+        <h2 class="text-xl font-bold">All Players</h2>
+        <button id="closeModal" class="text-black ">&times;</button>
+      </div>
+      <div id="modalPlayersDisplay" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 max-h-96 overflow-y-auto">
+       
+      </div>
+    </div>
+  
+              
+              
         </div>
-        <section class="  fixed inset-0 flex justify-center items-center modalContainer bg-black/60 z-50 hidden  ">
+        <section class="  fixed inset-0 flex sha justify-center items-center modalContainer bg-black/60 z-50 hidden  ">
             <div id="addForm" class="w-2/3 lg:w-1/2 bg-black rounded-lg p-4 text-white">
                 <div class="flex justify-between">
                     <h2 class="text-center text-2xl font-bold mb-4">ADD A PLAYER</h2>
