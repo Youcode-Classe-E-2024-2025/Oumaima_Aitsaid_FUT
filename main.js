@@ -2,6 +2,8 @@ const openform = document.getElementById("openModal");
 const closeform = document.getElementById("closeModal");
 const playerform = document.getElementById("playerModal");
 const formPlayersDisplay = document.getElementById("modalPlayersDisplay");
+const playerDetaillsOnCard = document.getElementById("playerDetaillsOnCard");
+
 //fetch json
 fetch('players.json')
   .then(response => response.json())
@@ -20,55 +22,55 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
  // validate for with regix
 
 
-  let regexname = /^[A-Za-z\s]+$/;
- let regexurl = /^https?:\/\/.*$/;
+//   let regexname = /^[A-Za-z\s]+$/;
+//  let regexurl = /^https?:\/\/.*$/;
 
-  if (!regexname.test(name)) {
-    alert("Player name can only contain letters and spaces");
-    return;
-  }
+//   if (!regexname.test(name)) {
+//     alert("Player name can only contain letters and spaces");
+//     return;
+//   }
 
-  if (!regexname.test(nationality)) {
-    alert("Nationality can only contain letters and spaces.");
-    return;
-  }
+//   if (!regexname.test(nationality)) {
+//     alert("Nationality can only contain letters and spaces.");
+//     return;
+//   }
 
-  if (!regexurl.test(photo)) {
-    alert("Please enter a valid photo ");
-    return;
-  }
+//   if (!regexurl.test(photo)) {
+//     alert("Please enter a valid photo ");
+//     return;
+//   }
 
-  if (!regexurl.test(logo)) {
-    alert("Please enter a valid logo URL");
-    return;
-  }
+//   if (!regexurl.test(logo)) {
+//     alert("Please enter a valid logo URL");
+//     return;
+//   }
 
-  if (!regexurl.test(flag)) {
-    alert("Please enter a valid flag url");
-    return;
-  }
+//   if (!regexurl.test(flag)) {
+//     alert("Please enter a valid flag url");
+//     return;
+//   }
 
-  if (pace < 0 || pace > 100) {
-    alert("Pace must be between 0 and 100");
-    return;
-  }
+//   if (pace < 0 || pace > 100) {
+//     alert("Pace must be between 0 and 100");
+//     return;
+//   }
 
-  if (shooting < 0 || shooting > 100) {
-    alert("Shooting must be between 0 and 100");
-    return;
-  }
+//   if (shooting < 0 || shooting > 100) {
+//     alert("Shooting must be between 0 and 100");
+//     return;
+//   }
 
-  if (dribbling < 0 || dribbling > 100) {
-    alert("dribbling must be between 0 and 100")
-  }
+//   if (dribbling < 0 || dribbling > 100) {
+//     alert("dribbling must be between 0 and 100")
+//   }
 
-  if (defending < 0 || defending > 100) {
-    alert("defending must be between 0 and 100")
-  }
+//   if (defending < 0 || defending > 100) {
+//     alert("defending must be between 0 and 100")
+//   }
 
-  if (physical < 0 || physical > 100) {
-    alert("physical must be between 0 and 100")
-  }
+//   if (physical < 0 || physical > 100) {
+//     alert("physical must be between 0 and 100")
+//   }
 
   const newPlayer = {
     name: document.getElementById("name").value,
@@ -107,7 +109,7 @@ function SeeAllplayer() {
       "border-gray-300",
       "rounded",
       "p-4",
-      "bg-gray-300",
+      "bg-gray-96",
       "shadow-sm",
       "text-center"
     );
@@ -133,6 +135,10 @@ function SeeAllplayer() {
     formPlayersDisplay.appendChild(playerCard);
   });
 }
+
+
+
+
 
 openform.addEventListener("click", () => {
   SeeAllplayer();
@@ -293,3 +299,5 @@ window.editPlayer = function (index) {
 closeEditForm.addEventListener("click", () => {
   editPlayerFormModal.classList.add("hidden");
 });
+const playerlistContainer = document.querySelector('.playerlistContainer');
+const playerlist = document.getElementById('playerlist');
