@@ -107,24 +107,24 @@ function SeeAllplayer() {
       "border-gray-300",
       "rounded",
       "p-4",
-      "bg-gray-50",
+      "bg-gray-300",
       "shadow-sm",
       "text-center"
     );
     playerCard.innerHTML = `
       <img class="w-24 h-24 mx-auto rounded-full" src="${player.photo}" alt="${player.name}">
-      <h3 class="text-lg font-semibold mt-2">${player.name}</h3>
-      <p class="text-sm text-gray-600">Position: ${player.position}</p>
-      <p class="text-sm text-gray-600">Rating: ${player.rating}</p>
-      <p class="text-sm text-gray-600">Nationality: ${player.nationality}</p>
+      <h3 class="text-lg text-black font-semibold mt-2">${player.name}</h3>
+      <p class="text-sm text-black">Position: ${player.position}</p>
+      <p class="text-sm text-black">Rating: ${player.rating}</p>
+      <p class="text-sm text-black">Nationality: ${player.nationality}</p>
          <button 
-        class="mt-3 bg-red-500 text-white text-sm py-1 px-3 rounded hover:bg-red-600 transition"
+        class="mt-3 bg-yellow-500 text-white text-sm py-1 px-3 rounded hover:bg-yellow-600 transition"
         onclick="removePlayer(${index})"
       >
         Remove
       </button>
       <button 
-        class="mt-3 bg-blue-500 text-white text-sm py-1 px-3 rounded hover:bg-blue-600 transition"
+        class="mt-3 bg-yellow-500 text-white text-sm py-1 px-3 rounded hover:bg-yellow-600 transition"
         onclick="editPlayer(${index})"
       >
         Edit

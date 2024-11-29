@@ -24,7 +24,7 @@
     border-radius: 12px; /* Matches the card's rounded corners */
     background: linear-gradient(90deg, rgba(255, 223, 0, 0.8), rgba(255, 200, 0, 0.5), rgba(255, 223, 0, 0.8));
     z-index: -1; /* Places the glow behind the card content */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease-out, transform 0.3s ease ease-out;
     opacity: 0; /* Initially invisible */
     transform: scale(1.2); /* Slightly larger to create the "glow" effect */
   }
