@@ -383,6 +383,77 @@ playerCard.innerHTML = `
 `;
 playerDetaillsOnCard.appendChild(playerCard)
 
+playerCard.addEventListener("click", () => {
+ if (index !== null) {
+ const targetDiv = document.querySelector(
+  `.formation-wraper button[onclick*="${filterPosition}"][onclick*="${index}"]`
+);
+console.log(targetDiv)
+if (targetDiv) {
+  targetDiv.innerHTML = "";
+  playerCard.classList.add(
+    "relative",
+    "bg-[url('/assets/images/badge_gold.webp')]", 
+    "bg-cover", 
+    "bg-center",
+    "rounded-lg",
+    "w-[120px]", 
+    "h-auto", 
+    "text-white", 
+    "p-2", 
+    "cursor-pointer"
+  );
+  
+  playerCard.innerHTML = `
+    <div class="absolute top-5 left-4 text-lg font-bold">${player.rating}
+      <p class="text-xs text-center">${player.position}</p>
+    </div>
+    
+    <img class="w-12 h-12 mx-auto" src="${player.photo}" alt="${player.name}">
+    <h6 class="text-xs font-bold text-center mb-4">${player.name}</h6>
+  
+    <div class="flex justify-around text-center mt-0.5 gap-0.5 text-[8px] -ml-1 ">
+      <div class="flex flex-col items-center">
+        <span>PAC</span>
+        <span>${player.pace}</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span>SHO</span>
+        <span>${player.shooting}</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span>PAS</span>
+        <span>${player.passing}</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span>DRI</span>
+        <span>${player.dribbling}</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span>DEF</span>
+        <span>${player.defending}</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span>PHY</span>
+        <span>${player.physical}</span>
+      </div>
+    </div>
+  
+    <div class="absolute top-6 right-4">
+      <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.flag}" alt="${player.nationality}">
+      <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.logo}" alt="${player.club}">
+    </div>
+  `;
+   
+
+
+  targetDiv.appendChild(playerCard); 
+  playerlistContainer.classList.add("hidden"); 
+} else {
+  console.error("Target div not found for index:", index);
+}
+}
+});
 });
 
 }
