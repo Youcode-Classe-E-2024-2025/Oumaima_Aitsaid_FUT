@@ -4,6 +4,7 @@ const playerform = document.getElementById("playerModal");
 const formPlayersDisplay = document.getElementById("modalPlayersDisplay");
 const playerDetaillsOnCard = document.getElementById("playerDetaillsOnCard");
 
+
 //fetch json
 fetch('players.json')
   .then(response => response.json())
@@ -95,6 +96,8 @@ document.getElementById("addPlayerForm").addEventListener("submit", function (e)
 
   localStorage.setItem("players", JSON.stringify(playersData));
   document.getElementById("addPlayerForm").reset();
+  
+  
 
 });
 
@@ -135,9 +138,6 @@ function SeeAllplayer() {
     formPlayersDisplay.appendChild(playerCard);
   });
 }
-
-
-
 
 
 openform.addEventListener("click", () => {
@@ -295,9 +295,94 @@ window.editPlayer = function (index) {
     displayPlayersInModal(); 
   };
 }
+
 //close formul edit
 closeEditForm.addEventListener("click", () => {
   editPlayerFormModal.classList.add("hidden");
 });
 const playerlistContainer = document.querySelector('.playerlistContainer');
 const playerlist = document.getElementById('playerlist');
+const addForm = document.getElementById('addForm');
+const modalContainer = document.querySelector('.modalContainer');
+const closeAdd = document.getElementById('closeAdd');
+function addPlayer() {  
+    modalContainer.classList.toggle('hidden'); 
+    document.body.classList.toggle('page-opacity');
+}
+
+
+
+function addPlayerCard(filterPosition = null , index =null ){
+
+
+playerlistContainer.classList.toggle('hidden')
+const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
+const playersToDisplay = filterPosition
+?playersData.players.filter(player => player.position === filterPosition)
+:playersData.players;
+
+playerDetaillsOnCard.innerHTML = "";
+playersToDisplay.forEach((player) => {
+const playerCard = document.createElement("div");
+playerDetaillsOnCard.classList.add(
+  "grid", 
+  "grid-cols-2", 
+  "gap-4", 
+  "p-4" 
+); 
+playerCard.classList.add(
+  "relative",
+  "bg-[url('/assets/images/badge_gold.webp')]", 
+  "bg-cover", 
+  "bg-center", 
+  "rounded-lg", 
+  "w-48", 
+  "h-auto", 
+  "text-white", 
+  "p-4",
+  "cursor-pointer",
+);
+
+playerCard.innerHTML = `
+  <div class="absolute top-6 left-6 text-xl font-bold">${player.rating}
+  <p class="text-sm text-center ">${player.position}</p>
+  </div>
+  <img class="w-18 h-18 mx-auto " src="${player.photo}" alt="${player.name}">
+  <h3 class="text-lg font-bold  text-center">${player.name}</h3>
+  <div class="flex justify-around text-center mt-[2px] gap-0 text-xs w-36 mx-auto">
+  <div class="flex flex-col items-center">
+    <span>PAC</span>
+    <span>${player.pace}</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span >SHO</span>
+    <span>${player.shooting}</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span >PAS</span>
+    <span>${player.passing}</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span >DRI</span>
+    <span>${player.dribbling}</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span >DEF</span>
+    <span>${player.defending}</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span >PHY</span>
+    <span>${player.physical}</span>
+  </div>
+</div>
+<div class="absolute top-6 right-6">
+<img class="w-6 h-6  rounded-full mx-auto mt-1" src="${player.flag}" alt="${player.nationality}">
+  <img class="w-6 h-6 rounded-full mx-auto mt-1" src="${player.logo}" alt="${player.club}">
+</div>  
+  </div>
+`;
+playerDetaillsOnCard.appendChild(playerCard)
+
+});
+
+}

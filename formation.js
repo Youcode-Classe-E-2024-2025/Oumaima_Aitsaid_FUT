@@ -1,16 +1,15 @@
 document.getElementById('formationSelect').addEventListener('change', function () {
-    const formation = this.value; // Get the selected value
-    const formationContainer = document.querySelector('.formation-container'); // Select the formation container
+    const formation = this.value; 
+    const formationContainer = document.querySelector('.formation-container');
 
     if (formationContainer) {
-        // Add a fade-out effect
+     
         formationContainer.classList.add('opacity-0', 'transition-opacity', 'duration-500');
         setTimeout(() => {
-            // Clear the current formation and fade-in the new formation
+            
             formationContainer.innerHTML = '';
 
             if (formation === '4-4-2') {
-                // 4-4-2 Formation
                 formationContainer.innerHTML = `
                     <div class="player-card col-start-2 row-start-1">ST
                     <button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
@@ -138,8 +137,8 @@ document.getElementById('formationSelect').addEventListener('change', function (
                 `;
             }
 
-            // Fade back in
+            
             formationContainer.classList.remove('opacity-0');
-        }, 500); // Matches the transition duration
+        }, 500); 
     }
 });
