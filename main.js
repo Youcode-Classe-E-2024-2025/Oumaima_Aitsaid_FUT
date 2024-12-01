@@ -310,11 +310,8 @@ function addPlayer() {
     document.body.classList.toggle('page-opacity');
 }
 
-
-
+let selectedPlayers = [];
 function addPlayerCard(filterPosition = null , index =null ){
-
-
 playerlistContainer.classList.toggle('hidden')
 const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
 const playersToDisplay = filterPosition
@@ -342,7 +339,6 @@ playerCard.classList.add(
   "p-4",
   "cursor-pointer",
 );
-
 playerCard.innerHTML = `
   <div class="absolute top-6 left-6 text-xl font-bold">${player.rating}
   <p class="text-sm text-center ">${player.position}</p>
@@ -384,6 +380,12 @@ playerCard.innerHTML = `
 playerDetaillsOnCard.appendChild(playerCard)
 
 playerCard.addEventListener("click", () => {
+
+  if(selectedPlayers.some((selected ) => selected.name === player.name))
+  {
+    alert('this player ready choise');
+    return;
+  }
  if (index !== null) {
  const targetDiv = document.querySelector(
   `.formation-wraper button[onclick*="${filterPosition}"][onclick*="${index}"]`
@@ -391,7 +393,8 @@ playerCard.addEventListener("click", () => {
 console.log(targetDiv)
 if (targetDiv) {
   targetDiv.innerHTML = "";
-  playerCard.classList.add(
+  const fieldPlayerCard = document.createElement("div");
+  fieldPlayerCard.classList.add(
     "relative",
     "bg-[url('/assets/images/badge_gold.webp')]", 
     "bg-cover", 
@@ -402,13 +405,13 @@ if (targetDiv) {
     "text-white", 
     "p-2", 
     "cursor-pointer"
+    
   );
   
-  playerCard.innerHTML = `
+  fieldPlayerCard.innerHTML = `
     <div class="absolute top-5 left-4 text-lg font-bold">${player.rating}
       <p class="text-xs text-center">${player.position}</p>
     </div>
-    
     <img class="w-12 h-12 mx-auto" src="${player.photo}" alt="${player.name}">
     <h6 class="text-xs font-bold text-center mb-4">${player.name}</h6>
   
@@ -438,20 +441,28 @@ if (targetDiv) {
         <span>${player.physical}</span>
       </div>
     </div>
-  
     <div class="absolute top-6 right-4">
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.flag}" alt="${player.nationality}">
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.logo}" alt="${player.club}">
     </div>
+    <div class="relative top-6 right-64">
+                <button class="bg-red-500 text-white text-xs rounded px-2 py-1 supprimer-btn">Supprimer</button>
+              </div>
   `;
-   
-
-
-  targetDiv.appendChild(playerCard); 
+  selectedPlayers.push(player);
+  fieldPlayerCard.querySelector(".supprimer-btn").addEventListener("click", () => {
+    targetDiv.innerHTML = `<button class=" add-player-card-btn text-white "  >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>`
+    selectedPlayers = selectedPlayers.filter((selected) => selected.name !== player.name);
+    playerlistContainer.classList.remove("hidden");
+    
+  });
+  targetDiv.appendChild(fieldPlayerCard); 
   playerlistContainer.classList.add("hidden"); 
-} else {
-  console.error("Target div not found for index:", index);
-}
+} 
 }
 });
 });
