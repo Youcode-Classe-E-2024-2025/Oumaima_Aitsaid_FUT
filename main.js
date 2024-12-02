@@ -334,45 +334,48 @@ playerCard.classList.add(
   "bg-cover", 
   "bg-center", 
   "rounded-lg", 
-  "w-48", 
+  "w-28",
+  
+  "sm:w-48",
   "h-auto", 
   "text-white", 
   "p-4",
   "cursor-pointer",
+
 );
 playerCard.innerHTML = `
-  <div class="absolute top-6 left-6 text-xl font-bold">${player.rating}
-  <p class="text-sm text-center ">${player.position}</p>
+  <div class="absolute top-10 left-4 text-xl font-bold hidden sm:block ">${player.rating}
+  <p class="text-sm text-center hidden sm:block  ">${player.position}</p>
   </div>
-  <img class="w-18 h-18 mx-auto " src="${player.photo}" alt="${player.name}">
-  <h3 class="text-lg font-bold  text-center">${player.name}</h3>
-  <div class="flex justify-around text-center mt-[2px] gap-0 text-xs w-36 mx-auto">
-  <div class="flex flex-col items-center">
+  <img class="w-22 h-28 mx-auto sm:w-18" src="${player.photo}" alt="${player.name}">
+  <h3 class="text-sm font-bold  text-center">${player.name}</h3>
+  <div class="flex justify-around text-center mt-[2px] p-2 gap-1 text-xs w-36 ">
+  <div class="flex flex-col  hidden sm:block  items-center">
     <span>PAC</span>
     <span>${player.pace}</span>
   </div>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col hidden sm:block  md:block items-center">
     <span >SHO</span>
     <span>${player.shooting}</span>
   </div>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col  hidden sm:block  md:block  items-center">
     <span >PAS</span>
     <span>${player.passing}</span>
   </div>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col hidden sm:block   items-center">
     <span >DRI</span>
     <span>${player.dribbling}</span>
   </div>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col hidden sm:block   items-center">
     <span >DEF</span>
     <span>${player.defending}</span>
   </div>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col hidden sm:block  items-center">
     <span >PHY</span>
     <span>${player.physical}</span>
   </div>
 </div>
-<div class="absolute top-6 right-6">
+<div class="absolute  top-10 right-2 hidden sm:block sm:right-4">
 <img class="w-6 h-6  rounded-full mx-auto mt-1" src="${player.flag}" alt="${player.nationality}">
   <img class="w-6 h-6 rounded-full mx-auto mt-1" src="${player.logo}" alt="${player.club}">
 </div>  
@@ -400,49 +403,50 @@ if (targetDiv) {
     "bg-[url('/assets/images/badge_gold.webp')]", 
     "bg-cover", 
     "bg-center",
-    "rounded-lg",
-    "w-[120px]", 
+    "rounded-sm",
+    "w-[80px]", 
     "h-auto", 
     "text-white", 
     "p-2", 
-    "cursor-pointer"
+    "cursor-pointer",
+    
     
   );
   
   fieldPlayerCard.innerHTML = `
-    <div class="absolute top-5 left-4 text-lg font-bold">${player.rating}
-      <p class="text-xs text-center">${player.position}</p>
+    <div class="absolute top-5 left-1 text-lg font-bold hidden sm:block">${player.rating}
+      <p class="text-xs text-center hidden sm:block">${player.position}</p>
     </div>
     <img class="w-12 h-12 mx-auto" src="${player.photo}" alt="${player.name}">
-    <h6 class="text-xs font-bold text-center mb-4">${player.name}</h6>
+    <h6 class="text-xs font-bold text-center mb-1">${player.name}</h6>
   
-    <div class="flex justify-around text-center mt-0.5 gap-0.5 text-[8px] -ml-1 ">
-      <div class="flex flex-col items-center">
+    <div class="flex justify-around text-center  mb-5 gap-0.5 text-[6px] -ml-1 ">
+      <div class="flex flex-col hidden sm:block items-center">
         <span>PAC</span>
         <span>${player.pace}</span>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col hidden sm:block items-center">
         <span>SHO</span>
         <span>${player.shooting}</span>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col hidden sm:block  items-center">
         <span>PAS</span>
         <span>${player.passing}</span>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col hidden sm:block items-center">
         <span>DRI</span>
         <span>${player.dribbling}</span>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col hidden sm:block items-center">
         <span>DEF</span>
         <span>${player.defending}</span>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col hidden sm:block items-center">
         <span>PHY</span>
         <span>${player.physical}</span>
       </div>
     </div>
-    <div class="absolute top-6 right-4">
+    <div class="absolute top-6 hidden sm:block right-4">
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.flag}" alt="${player.nationality}">
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.logo}" alt="${player.club}">
     </div>

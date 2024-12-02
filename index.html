@@ -8,10 +8,10 @@
    <link rel="stylesheet" href="src/player.css">
 </head>
 <body class=" min-h-screen bg-black">
-    <div class="  bg-[url('/assets/images/stadium_background.webp')] bg-cover bg-center min-h-screen z-10 ">
+    <div class="  bg-[url('/assets/images/stadium_background.webp')] bg-cover bg-center min-h-[400px] z-10 ">
         <div class="relative z-10">
             <header class="bg-black text-white">
-                <div class="container mx-auto flex items-center justify-between py-4 px-6">
+                <div class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-6">
                   <div class="text-2xl font-bold text-yellow-400">FUT Champions</div>
                   <nav class="hidden lg:flex space-x-6">
                     <a id="openModal"  class="hover:text-yellow-400  cursor-pointer">Joueurs</a>
@@ -24,7 +24,7 @@
                     <input type="text" placeholder="Rechercher..." 
                            class="px-3 py-2 w-60 rounded-md bg-slate-600 text-sm text-white focus:outline-none">  
                   </div>
-                <button onclick="addPlayer()" class=" text-white" >
+                <button onclick="addPlayer()" class="hidden lg:block text-white" >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                       </svg>
@@ -36,19 +36,19 @@
                   </button>
                 </div>
                 <div id="mobile-menu" 
-                   class="lg:hidden hidden fixed inset-0 bg-black flex flex-col items-start justify-center space-y-6">
-                <a href="#" class="hover:text-yellow-400 text-xl">Joueurs</a>
-                <a href="#" class="hover:text-yellow-400 text-xl">Marché</a>
-                <a href="#" class="hover:text-yellow-400 text-xl">Équipes</a>
-                <a href="#" class="hover:text-yellow-400 text-xl">Solutions SBC</a>
-                <a href="#" class="hover:text-yellow-400 text-xl">Actus</a>
+                   class="lg:hidden hidden fixed inset-0 bg-black flex flex-col items-start justify-center space-y-6 text-xl">
+                   <a href="#" class="hover:text-yellow-400 ">Joueurs</a>
+                   <a href="#" class="hover:text-yellow-400 ">Marché</a>
+                <a href="#" class="hover:text-yellow-400 ">Équipes</a>
+                <a href="#" class="hover:text-yellow-400 ">Solutions SBC</a>
+                <a href="#" class="hover:text-yellow-400 ">Actus</a>
               </div>
               </header>
-              <div class="flex justify-center items-center h-screen space-x-44">
+              <div class="flex flex-col md:flex-row justify-center items-center h-screen space-y-12 md:space-y-2 md:space-x-12  sm:p-6">
 
-                <div class=" formation-wraper bg-[url('/assets/images/field-bg.webp')] tilt  w-[750px] h-[500px] bg-cover bg-center ">
+                <div class=" formation-wraper bg-[url('/assets/images/field-bg.webp')] tilt  max-w-[750px] min-w-[250px] min-h-[400px] max-h-[500px] bg-cover bg-center ">
 
-                    <div class="formation-container" >
+                    <div class="formation-container grid grid-cols-2  md:grid-cols-4 " >
 
                         <div id="STdiv" class="player-card col-start-2 row-start-1">ST<button id="STbtn" onclick="addPlayerCard('ST',11)" class=" add-player-card-btn text-white "  >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
@@ -123,10 +123,10 @@
 
                 </div>
 
-                <div class="rounded w-[200px] h-[200px] bg-black text-white p-2 flex flex-col gap-2 items-center mr-12">
+                <div class="rounded w-full max-w-xs bg-black text-white p-4 flex flex-col gap-2 items-center text-center">
                     <h2 class="text-2xl">SQUAD INFO</h2>
                     <p>FORMATION</p>
-                    <select class="bg-black-slate w-1/2 text-black" name="formation" id="formationSelect">
+                    <select class="bg-black-slate w-full text-black" name="formation" id="formationSelect">
                         <option value="4-4-2">4-4-2</option>
                         <option value="4-3-3">4-3-3</option>
                     </select>
@@ -236,7 +236,7 @@
                         <div class="flex flex-col">
                             <label for="passing" class="mb-1 text-sm text-white font-semibold">Passing</label>
                             <input type="number" id="passing" placeholder="Passing (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
-                            max="100">
+                           
                         </div>
                         <div class="flex flex-col">
                             <label for="Dribbling" class="mb-1 text-sm text-white font-semibold">Dribbling</label>
@@ -319,7 +319,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                       </svg>
                     </button></div>
-                <div class="player-card"></div>
+                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                    </button></div>
                 <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -343,10 +347,16 @@
         <p class="text-white"> Created by OUMAIMA AIT SAID 2024</p>
          
     </footer>
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+      </script>
+    
 </body>
 <script  src="main.js"></script>
 <script src="formation.js"></script>
 
 
 </html>
-

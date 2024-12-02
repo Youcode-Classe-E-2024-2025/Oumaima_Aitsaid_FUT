@@ -4,8 +4,8 @@
   }
   .player-card {
     margin: auto;
-    height: 8rem;
-    width: 8rem;
+    height: 6rem;
+    width: 6rem;
     background-image: url('../assets/images/card.webp');
     background-size: contain;
     background-position: top;
@@ -20,18 +20,18 @@
   .player-card::before {
     content: "";
     position: absolute;
-    inset: 0; /* Ensures it spans the entire card */
-    border-radius: 12px; /* Matches the card's rounded corners */
+    inset: 0; 
+    border-radius: 12px; 
     background: linear-gradient(90deg, rgba(255, 223, 0, 0.8), rgba(255, 200, 0, 0.5), rgba(255, 223, 0, 0.8));
-    z-index: -1; /* Places the glow behind the card content */
+    z-index: -1; 
     transition: opacity 0.3s ease-out, transform 0.3s ease ease-out;
-    opacity: 0; /* Initially invisible */
-    transform: scale(1.2); /* Slightly larger to create the "glow" effect */
+    opacity: 0; 
+    transform: scale(1.2);
   }
   .player-card:hover::before {
-    opacity: 1; /* Makes the border visible on hover */
-    transform: scale(1); /* Matches the card size exactly */
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Adds a subtle glowing effect */
+    opacity: 1; 
+    transform: scale(1); 
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); 
   }
     .formation-container {
     display: grid;
@@ -44,12 +44,23 @@
     gap: 1rem;
     
     }
-  
+    @media (max-width: 768px) {
+    .formation-container{
+      gap:0;
+      justify-content: center;
+      align-items: center;
+      margin-right: 50px;
+
+    
+
+    }
+    
+    }
     .SubstitutionContainer {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  /* Auto fit with a minimum size of 100px per card */
-        gap: 10px;  /* Adjust spacing between the cards */
-        justify-items: center;  /* Align cards in the center */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  
+        gap: 10px;  
+        justify-items: center;  
         max-width: 700px;
       }
    
@@ -59,9 +70,9 @@
   
   .add-player-card-btn {
     position: absolute;
-    top: 50%; /* Move the button to the vertical center */
-    left: 50%; /* Move the button to the horizontal center */
-    transform: translate(-50%, -50%); /* Offset for perfect centering */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -70,7 +81,7 @@
   }
   
   .add-player-card-btn:hover {
-    transform: translate(-50%, -50%) scale(1.2); /* Slight zoom effect */
+    transform: translate(-50%, -50%) scale(1.2); 
   }
   
   .add-player-card-btn svg {
@@ -86,5 +97,14 @@
         width: 90%;
         max-width: none;
         padding: 15px;
+    }
+  }
+  @media (max-width :780px){
+    .player-card{
+    height: 6rem;
+    width: 4rem;
+    }
+    .formation-container{
+      gap:1rem
     }
   }
