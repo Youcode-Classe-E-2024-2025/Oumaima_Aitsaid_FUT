@@ -321,6 +321,7 @@ const playersToDisplay = filterPosition
 playerDetaillsOnCard.innerHTML = "";
 playersToDisplay.forEach((player) => {
 const playerCard = document.createElement("div");
+const optionBar = document.createElement("div");
 playerDetaillsOnCard.classList.add(
   "grid", 
   "grid-cols-2", 
@@ -445,12 +446,13 @@ if (targetDiv) {
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.flag}" alt="${player.nationality}">
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.logo}" alt="${player.club}">
     </div>
-    <div class="relative top-6 right-64">
-                <button class="bg-red-500 text-white text-xs rounded px-2 py-1 supprimer-btn">Supprimer</button>
-              </div>
+    
   `;
   selectedPlayers.push(player);
-  fieldPlayerCard.querySelector(".supprimer-btn").addEventListener("click", () => {
+  optionBar.classList.add("absolute", "top-2" , "-right-4" ,"bg-black" , "text-white" ,"p-2" ,"rounded" ,"cursor-pointer" ,"text-sm" ,"font-bold")
+  optionBar.textContent ="X"
+  targetDiv.appendChild(optionBar)
+  optionBar.addEventListener("click", () => {
     targetDiv.innerHTML = `<button class=" add-player-card-btn text-white "  >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
