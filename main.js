@@ -129,7 +129,7 @@ addPlayerForm.addEventListener("submit", function (e) {
     speed: Number(document.getElementById("speed").value),
     positioning: Number(document.getElementById("positioning").value),
   }
-
+//spred operation
   if (position.value == "GK") newPlayer = { ...newPlayer, ...GKPlayerStatistic }
   else newPlayer = { ...newPlayer, ...regularPayerStatistic }
 
@@ -268,12 +268,8 @@ addPlayerForm.addEventListener("submit", function (e) {
 
 
       let nameRegex = /^[a-zA-Z\s]+$/;
-      let positionRegex = /^(ST|LM|CM|RM|LB|RB|GK)$/;
       let nationalityRegex = /^[a-zA-Z\s]+$/;
       let urlRegex = /^https?:\/\/.*$/;
-
-
-      let numberRangeRegex = /^(?:100|[1-9]?\d)$/;
 
 
       if (!nameRegex.test(nameEdit)) {
