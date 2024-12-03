@@ -181,10 +181,10 @@ addPlayerForm.addEventListener("submit", function (e) {
       );
       playerCard.innerHTML = `
       <img class="w-24 h-24 mx-auto rounded-full" src="${player.photo}" alt="${player.name}">
-      <h3 class="text-lg text-black font-semibold mt-2">${player.name}</h3>
-      <p class="text-sm text-black">Position: ${player.position}</p>
-      <p class="text-sm text-black">Rating: ${player.rating}</p>
-      <p class="text-sm text-black">Nationality: ${player.nationality}</p>
+      <h3 class="text-lg text-white font-semibold mt-2">${player.name}</h3>
+      <p class="text-sm text-white">Position: ${player.position}</p>
+      <p class="text-sm text-white">Rating: ${player.rating}</p>
+      <p class="text-sm text-white">Nationality: ${player.nationality}</p>
          <button 
         class="mt-3 bg-yellow-500 text-white text-sm py-1 px-3 rounded hover:bg-yellow-600 transition"
         onclick="removePlayer(${index})"
@@ -327,6 +327,8 @@ addPlayerForm.addEventListener("submit", function (e) {
 
   let selectedPlayers = [];
   function addPlayerCard(filterPosition = null, index = null) {
+    
+
     playerlistContainer.classList.toggle('hidden')
     const playersData = JSON.parse(localStorage.getItem("players")) || { players: [] };
     const playersToDisplay = filterPosition
@@ -335,6 +337,114 @@ addPlayerForm.addEventListener("submit", function (e) {
 
     playerDetaillsOnCard.innerHTML = "";
     playersToDisplay.forEach((player) => {
+      let statistic2 ;
+      let statistic;
+
+
+    if(player.position == "GK") statistic = ` <div class="flex justify-around text-center mt-[2px] p-2 gap-1 text-xs w-36 ">
+  <div class="flex flex-col  hidden sm:block  items-center">
+    <span>PAC</span>
+    <span>${player.rating}</span>
+  </div>
+  <div class=" hidden sm:block  md:block items-center">
+    <span >SHO</span>
+    <span>${player.diving}</span>
+  </div>
+  <div class="  hidden sm:block  md:block  items-center">
+    <span >PAS</span>
+    <span>${player.handling}</span>
+  </div>
+  <div class="flex flex-col hidden sm:block   items-center">
+    <span >DRI</span>
+    <span>${player.kicking}</span>
+  </div>
+  <div class="flex flex-col hidden sm:block   items-center">
+    <span >DEF</span>
+    <span>${player.reflexes}</span>
+  </div>
+  <div class="flex flex-col hidden sm:block  items-center">
+    <span >PHY</span>
+    <span>${player.speed}</span>
+  </div>
+</div>`
+else statistic = ` <div class="flex justify-around text-center mt-[2px] p-2 gap-1 text-xs w-36 ">
+  <div class="flex flex-col  hidden sm:block  items-center">
+    <span>PAC</span>
+    <span>${player.pace}</span>
+  </div>
+  <div class=" hidden sm:block  md:block items-center">
+    <span >SHO</span>
+    <span>${player.shooting}</span>
+  </div>
+  <div class="  hidden sm:block  md:block  items-center">
+    <span >PAS</span>
+    <span>${player.passing}</span>
+  </div>
+  <div class="flex flex-col hidden sm:block   items-center">
+    <span >DRI</span>
+    <span>${player.dribbling}</span>
+  </div>
+  <div class="flex flex-col hidden sm:block   items-center">
+    <span >DEF</span>
+    <span>${player.defending}</span>
+  </div>
+  <div class="flex flex-col hidden sm:block  items-center">
+    <span >PHY</span>
+    <span>${player.physical}</span>
+  </div>
+</div>`
+if(player.position == "GK") statistic2 =` <div class="flex justify-around text-center   gap-0.5 text-[6px] -ml-1 ">
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>PAC</span>
+        <span>${player.rating}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>SHO</span>
+        <span>${player.diving}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block  items-center">
+        <span>PAS</span>
+        <span>${player.handling}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>DRI</span>
+        <span>${player.kicking}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>DEF</span>
+        <span>${player.reflexes}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>PHY</span>
+        <span>${player.speed}</span>
+      </div>
+    </div>`
+    else statistic2 = ` <div class="flex justify-around text-center   gap-0.5 text-[6px] -ml-1 ">
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>PAC</span>
+        <span>${player.pace}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>SHO</span>
+        <span>${player.shooting}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block  items-center">
+        <span>PAS</span>
+        <span>${player.passing}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>DRI</span>
+        <span>${player.dribbling}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>DEF</span>
+        <span>${player.defending}</span>
+      </div>
+      <div class="flex flex-col hidden sm:block items-center">
+        <span>PHY</span>
+        <span>${player.physical}</span>
+      </div>
+    </div>`
       const playerCard = document.createElement("div");
       const optionBar = document.createElement("div");
       playerDetaillsOnCard.classList.add(
@@ -364,32 +474,7 @@ addPlayerForm.addEventListener("submit", function (e) {
   </div>
   <img class="w-22 h-28 mx-auto sm:w-18" src="${player.photo}" alt="${player.name}">
   <h3 class="text-sm font-bold  text-center">${player.name}</h3>
-  <div class="flex justify-around text-center mt-[2px] p-2 gap-1 text-xs w-36 ">
-  <div class="flex flex-col  hidden sm:block  items-center">
-    <span>PAC</span>
-    <span>${player.pace}</span>
-  </div>
-  <div class="flex flex-col hidden sm:block  md:block items-center">
-    <span >SHO</span>
-    <span>${player.shooting}</span>
-  </div>
-  <div class="flex flex-col  hidden sm:block  md:block  items-center">
-    <span >PAS</span>
-    <span>${player.passing}</span>
-  </div>
-  <div class="flex flex-col hidden sm:block   items-center">
-    <span >DRI</span>
-    <span>${player.dribbling}</span>
-  </div>
-  <div class="flex flex-col hidden sm:block   items-center">
-    <span >DEF</span>
-    <span>${player.defending}</span>
-  </div>
-  <div class="flex flex-col hidden sm:block  items-center">
-    <span >PHY</span>
-    <span>${player.physical}</span>
-  </div>
-</div>
+      ${statistic}
 <div class="absolute  top-10 right-2 hidden sm:block sm:right-4">
 <img class="w-6 h-6  rounded-full mx-auto mt-1" src="${player.flag}" alt="${player.nationality}">
   <img class="w-6 h-6 rounded-full mx-auto mt-1" src="${player.logo}" alt="${player.club}">
@@ -434,32 +519,7 @@ addPlayerForm.addEventListener("submit", function (e) {
     <img class="w-12 h-20 mx-auto object-contain" src="${player.photo}" alt="${player.name}">
     <h6 class="text-xs  text-center ">${player.name.split(" ").at(-1)}</h6>
   
-    <div class="flex justify-around text-center   gap-0.5 text-[6px] -ml-1 ">
-      <div class="flex flex-col hidden sm:block items-center">
-        <span>PAC</span>
-        <span>${player.pace}</span>
-      </div>
-      <div class="flex flex-col hidden sm:block items-center">
-        <span>SHO</span>
-        <span>${player.shooting}</span>
-      </div>
-      <div class="flex flex-col hidden sm:block  items-center">
-        <span>PAS</span>
-        <span>${player.passing}</span>
-      </div>
-      <div class="flex flex-col hidden sm:block items-center">
-        <span>DRI</span>
-        <span>${player.dribbling}</span>
-      </div>
-      <div class="flex flex-col hidden sm:block items-center">
-        <span>DEF</span>
-        <span>${player.defending}</span>
-      </div>
-      <div class="flex flex-col hidden sm:block items-center">
-        <span>PHY</span>
-        <span>${player.physical}</span>
-      </div>
-    </div>
+   ${statistic2}
     <div class="absolute top-6 hidden sm:block right-2">
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.flag}" alt="${player.nationality}">
       <img class="w-4 h-4 rounded-full mx-auto mt-0.5" src="${player.logo}" alt="${player.club}">
