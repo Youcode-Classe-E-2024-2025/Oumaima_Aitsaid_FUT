@@ -13,36 +13,19 @@
             <header class="bg-black text-white">
                 <div class="container mx-auto flex items-center justify-between py-4 px-6 lg:px-6">
                   <div class="text-2xl font-bold text-yellow-400">FUT Champions</div>
-                  <nav class="hidden lg:flex space-x-6">
+                  <nav class=" lg:flex space-x-6">
                     <a id="openModal"  class="hover:text-yellow-400  cursor-pointer">Joueurs</a>
-                    <a href="#" class="hover:text-yellow-400">Marché</a>
-                    <a href="#" class="hover:text-yellow-400">Équipes</a>
-                    <a href="#" class="hover:text-yellow-400">Solutions SBC</a>
-                    <a href="#" class="hover:text-yellow-400">Actus</a>
+                    
                   </nav>
-                  <div class="hidden lg:flex items-center space-x-4">
-                    <input type="text" placeholder="Rechercher..." 
-                           class="px-3 py-2 w-60 rounded-md bg-slate-600 text-sm text-white focus:outline-none">  
-                  </div>
-                <button onclick="addPlayer()" class="hidden lg:block text-white" >
+                  
+                <button onclick="addPlayer()" class=" lg:block text-white" >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                       </svg>
                     </button>
-                  <button class="lg:hidden text-white" id="menu-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                  </button>
+                 
                 </div>
-                <div id="mobile-menu" 
-                   class="lg:hidden hidden fixed inset-0 bg-black flex flex-col items-start justify-center space-y-6 text-xl">
-                   <a href="#" class="hover:text-yellow-400 ">Joueurs</a>
-                   <a href="#" class="hover:text-yellow-400 ">Marché</a>
-                <a href="#" class="hover:text-yellow-400 ">Équipes</a>
-                <a href="#" class="hover:text-yellow-400 ">Solutions SBC</a>
-                <a href="#" class="hover:text-yellow-400 ">Actus</a>
-              </div>
+               
               </header>
               <div class="flex flex-col md:flex-row justify-center items-center h-screen space-y-12 md:space-y-2 md:space-x-12  sm:p-6">
 
@@ -156,17 +139,14 @@
       </div>
       <form id="EditPlayerForm" class="bg-white rounded-md shadow-md  space-y-2">
           <input type="text" id="editName" placeholder="Player Name" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
-          <input type="text" id="editPosition" placeholder="Position" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
           <input type="text" id="editNationality" placeholder="Nationality" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
         <input type="url" id="editPhoto" placeholder="Photo URL" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
         <input type="url" id="editFlag" placeholder="Flag URL" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
         <input type="url" id="editLogo" placeholder="Club Logo URL" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
-        <input type="number" id="editRating" placeholder="Rating (1-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
-        <input type="number" id="editPace" placeholder="Pace (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
-        <input type="number" id="editShooting" placeholder="Shooting (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
-        <input type="number" id="editDribbling" placeholder="Dribbling (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
-        <input type="number" id="editDefending" placeholder="Defending (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
-        <input type="number" id="editPhysical" placeholder="Physical (0-100)" class="w-full border border-gray-300 rounded px-2 py-1 text-sm" required>
+
+    
+   
+        
         <button type="submit" id="btnedit" class="w-full bg-yellow-500 text-white text-sm py-2 rounded hover:bg-yellow-600">Save Changes</button>
       </form>
     </div>
@@ -182,15 +162,15 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="flex flex-col">
                             <label for="name" class="mb-1 text-sm text-white font-semibold">Player Name</label>
-                            <input type="text" id="name" placeholder="Enter player name" class="input" required pattern="[A-Za-z\s]+" title="Player name can only contain letters and spaces.">
+                            <input type="text" id="name" name="name" placeholder="Enter player name" class="input" required pattern="[A-Za-z\s]+" title="Player name can only contain letters and spaces.">
                         </div>
                         <div class="flex flex-col">
                             <label for="nationality" class="mb-1 text-sm text-white font-semibold">Nationality</label>
-                            <input type="text" id="nationality" placeholder="Enter nationality" class="input" required pattern="[A-Za-z\s]+" title="Nationality can only contain letters and spaces.">
+                            <input type="text" id="nationality" name="nationality" placeholder="Enter nationality" class="input" required pattern="[A-Za-z\s]+" title="Nationality can only contain letters and spaces.">
                         </div>
                         <div class="flex flex-col">
                             <label for="club" class="mb-1 text-sm text-white font-semibold">Club Name</label>
-                            <input type="text" id="club" placeholder="Enter club name" class="input" required pattern="[A-Za-z0-9\s]+" title="Club name can contain letters, numbers, and spaces.">
+                            <input type="text" id="club" name="club" placeholder="Enter club name" class="input" required pattern="[A-Za-z0-9\s]+" title="Club name can contain letters, numbers, and spaces.">
                         </div>
                         <div class="flex flex-col">
                             <label for="position" class="mb-1 text-sm text-white font-semibold">Position</label>
@@ -209,88 +189,88 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="flex flex-col">
                             <label for="player-photo" class="mb-1 text-sm text-white font-semibold">Player Photo</label>
-                            <input type="url" id="photo" placeholder="Enter player photo URL" class="input" required pattern="https?://.*" title="Enter a valid URL starting with http:// or https://">
+                            <input type="url" id="photo" name="photo" placeholder="Enter player photo URL" class="input" required pattern="https?://.*" title="Enter a valid URL starting with http:// or https://">
                         </div>
                         <div class="flex flex-col">
                             <label for="club-photo" class="mb-1 text-sm text-whitefont-semibold">Club Logo</label>
-                            <input type="url" id="logo" placeholder="Enter club logo URL" class="input" required pattern="https?://.*" title="Enter a valid URL starting with http:// or https://">
+                            <input type="url" id="logo" name="logo" placeholder="Enter club logo URL" class="input" required pattern="https?://.*" title="Enter a valid URL starting with http:// or https://">
                         </div>
 
                         <div class="flex flex-col">
                             <label for="flag-photo" class="mb-1 text-sm text-white font-semibold">National Flag</label>
-                            <input type="url" id="flag" placeholder="Enter national flag URL" class="input" required pattern="https?://.*" title="Enter a valid URL starting with http:// or https://">
+                            <input type="url" id="flag"  name="flag"  placeholder="Enter national flag URL" class="input" required pattern="https?://.*" title="Enter a valid URL starting with http:// or https://">
                         </div>
                     </div>
 
                     <div  id="regularPlayerInputs" class=" regularPlayerInputs grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="flex flex-col">
                             <label for="pace" class="mb-1 text-sm text-white font-semibold">Pace</label>
-                            <input type="number" id="pace" placeholder="Pace (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="pace" name="pace" placeholder="Pace (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
                             
                         </div>
                         <div class="flex flex-col">
                             <label for="shooting" class="mb-1 text-sm text-white font-semibold">Shooting</label>
-                            <input type="number" id="shooting" placeholder="Shooting (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="shooting" name="shooting" placeholder="Shooting (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
 
                         </div>
                         <div class="flex flex-col">
                             <label for="passing" class="mb-1 text-sm text-white font-semibold">Passing</label>
-                            <input type="number" id="passing" placeholder="Passing (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="passing"  name="passing"  placeholder="Passing (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
                            
                         </div>
                         <div class="flex flex-col">
                             <label for="Dribbling" class="mb-1 text-sm text-white font-semibold">Dribbling</label>
-                            <input type="number" id="dribbling" placeholder="Dribbling (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="dribbling" name="dribbling" placeholder="Dribbling (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
                            
                         </div>
                         <div class="flex flex-col">
                             <label for="Defending" class="mb-1 text-sm text-white font-semibold">Defending</label>
-                            <input type="number" id="defending" placeholder="Defending (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="defending" name="defending" placeholder="Defending (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
                            
                         </div>
                         <div class="flex flex-col">
                             <label for="Physical" class="mb-1 text-sm text-white font-semibold">Physical</label>
-                            <input type="number" id="physical" placeholder="Physical (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="physical" name="physical" placeholder="Physical (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
                         </div>
                         <div class="flex flex-col">
                             <label for="rating" class="mb-1 text-sm text-white font-semibold">Rating</label>
-                            <input type="number" id="rating" placeholder="Rating (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="rating" name="rating" placeholder="Rating (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
 
                         </div>
                     </div>
                     <div id="GKinputs"class=" GKinputs grid grid-cols-1 md:grid-cols-3 gap-4 hidden ">
                         <div class="flex flex-col">
                             <label for="rating" class="mb-1 text-sm text-white font-semibold">Rating</label>
-                            <input type="number" id="ratingGK" placeholder="Rating (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="ratingGK" name="ratingGK" placeholder="Rating (0-100)" class="input"  min="0" max="100" title="Enter a number between 0 and 100">
 
                         </div>
                         <div class="flex flex-col">
                             <label for="diving" class="mb-1 text-sm text-white font-semibold">diving</label>
-                            <input type="number" id="diving" placeholder="diving (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="diving" name="diving" placeholder="diving (0-100)" class="input"  min="0" max="100" title="Enter a number between 0 and 100">
 
                         </div>
                         <div class="flex flex-col">
                             <label for="handling" class="mb-1 text-sm text-white font-semibold">handling</label>
-                            <input type="number" id="handling" placeholder="handling (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="handling" name="handling" placeholder="handling (0-100)" class="input" min="0" max="100" title="Enter a number between 0 and 100">
                            
                         </div>
                         <div class="flex flex-col">
                             <label for="kicking" class="mb-1 text-sm text-white font-semibold">kicking</label>
-                            <input type="number" id="kicking" placeholder="kicking (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="kicking" name="kicking" placeholder="kicking (0-100)" class="input" min="0" max="100" title="Enter a number between 0 and 100">
                            
                         </div>
                         <div class="flex flex-col">
                             <label for="reflexes" class="mb-1 text-sm text-white font-semibold">reflexes</label>
-                            <input type="number" id="reflexes" placeholder="reflexes (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="reflexes" name="reflexes" placeholder="reflexes (0-100)" class="input"  min="0" max="100" title="Enter a number between 0 and 100">
                            
                         </div>
                         <div class="flex flex-col">
                             <label for="speed" class="mb-1 text-sm text-white font-semibold">speed</label>
-                            <input type="number" id="speed" placeholder="speed (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="speed" name="speed" placeholder="speed (0-100)" class="input" min="0" max="100" title="Enter a number between 0 and 100">
                         </div>
                         <div class="flex flex-col">
                             <label for="positioning" class="mb-1 text-sm text-white font-semibold">positioning</label>
-                            <input type="number" id="positioning" placeholder="positioning (0-100)" class="input" required min="0" max="100" title="Enter a number between 0 and 100">
+                            <input type="number" id="positioning" name="positioning" placeholder="positioning (0-100)" class="input"  min="0" max="100" title="Enter a number between 0 and 100">
 
                         </div>
                     </div>
@@ -321,75 +301,12 @@
             </div>
         </section> 
     </div>  
-    <!-- add section the substitution -->
-    <section>
-        <h2 class="text-white m-8 text-lg">SUBSTITUTION</h2>
-        
-            <div class="SubstitutionContainer">
-                <div class="player-card"><button onclick="addPlayerCard('ST',11)" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard('GK',10)" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard('GK',9)" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <div class="player-card"><button onclick="addPlayerCard()" class=" add-player-card-btn text-white "  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                      </svg>
-                    </button></div>
-                <!-- Add more cards as needed -->
-            </div>
-        
-    </section>
+    
     <footer class="bg-gray-600 h-12 mt-8 flex items-center justify-center">
         <p class="text-white"> Created by OUMAIMA AIT SAID 2024</p>
          
     </footer>
-    <script>
-        document.getElementById("menu-btn").addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          menu.classList.toggle("hidden");
-        });
-      </script>
+  
     
 </body>
 <script  src="main.js"></script>

@@ -4,7 +4,7 @@ document.getElementById('formationSelect').addEventListener('change', function (
 
     if (formationContainer) {
      
-        formationContainer.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+        formationContainer.classList.add('opacity-0', 'transition-all');
         setTimeout(() => {
             
             formationContainer.innerHTML = '';
