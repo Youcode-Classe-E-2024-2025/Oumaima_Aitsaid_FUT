@@ -11,11 +11,10 @@ fetch('players.json')
   .then(data => {
     if (!localStorage.getItem('players')) {
       localStorage.setItem('players', JSON.stringify(data));
-      console.log('Players loaded:', data);
     }
   })
   .catch(error => console.error('Error:', error));
-
+  
 const regularPlayerInputs = document.getElementById('regularPlayerInputs');
 const GKinputs = document.getElementById('GKinputs');
 const regularPlayerInputsEdit = document.getElementById('regularPlayerInputsEdit');
@@ -42,69 +41,74 @@ position.addEventListener("change", function (event) {
 addPlayerForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // validate for with regix
+ 
+  let name =document.getElementById("name").value
+ 
+  let photo = document.getElementById("photo").value;
+  let position = document.getElementById("position").value;
+  let nationality = document.getElementById("nationality").value;
+  let flag = document.getElementById("flag").value;
+  let club = document.getElementById("club").value;
+  let logo = document.getElementById("logo").value;
+    let regexname = /^[A-Za-z\s]+$/;
+   let regexurl = /^https?:\/\/.*$/;
 
+    if (!regexname.test(name)) {
+      alert("Player name can only contain letters and spaces");
+      return;
+    }
 
-  //   let regexname = /^[A-Za-z\s]+$/;
-  //  let regexurl = /^https?:\/\/.*$/;
+    if (!regexname.test(nationality)) {
+      alert("Nationality can only contain letters and spaces.");
+      return;
+    }
 
-  //   if (!regexname.test(name)) {
-  //     alert("Player name can only contain letters and spaces");
-  //     return;
-  //   }
+    if (!regexurl.test(photo)) {
+      alert("Please enter a valid photo ");
+      return;
+    }
 
-  //   if (!regexname.test(nationality)) {
-  //     alert("Nationality can only contain letters and spaces.");
-  //     return;
-  //   }
+    if (!regexurl.test(logo)) {
+      alert("Please enter a valid logo URL");
+      return;
+    }
 
-  //   if (!regexurl.test(photo)) {
-  //     alert("Please enter a valid photo ");
-  //     return;
-  //   }
+    if (!regexurl.test(flag)) {
+      alert("Please enter a valid flag url");
+      return;
+    }
 
-  //   if (!regexurl.test(logo)) {
-  //     alert("Please enter a valid logo URL");
-  //     return;
-  //   }
+    if (pace < 0 || pace > 100) {
+      alert("Pace must be between 0 and 100");
+      return;
+    }
 
-  //   if (!regexurl.test(flag)) {
-  //     alert("Please enter a valid flag url");
-  //     return;
-  //   }
+    if (shooting < 0 || shooting > 100) {
+      alert("Shooting must be between 0 and 100");
+      return;
+    }
 
-  //   if (pace < 0 || pace > 100) {
-  //     alert("Pace must be between 0 and 100");
-  //     return;
-  //   }
+    if (dribbling < 0 || dribbling > 100) {
+      alert("dribbling must be between 0 and 100")
+    }
 
-  //   if (shooting < 0 || shooting > 100) {
-  //     alert("Shooting must be between 0 and 100");
-  //     return;
-  //   }
+    if (defending < 0 || defending > 100) {
+      alert("defending must be between 0 and 100")
+    }
 
-  //   if (dribbling < 0 || dribbling > 100) {
-  //     alert("dribbling must be between 0 and 100")
-  //   }
-
-  //   if (defending < 0 || defending > 100) {
-  //     alert("defending must be between 0 and 100")
-  //   }
-
-  //   if (physical < 0 || physical > 100) {
-  //     alert("physical must be between 0 and 100")
-  //   }
+    if (physical < 0 || physical > 100) {
+      alert("physical must be between 0 and 100")
+    }
 
 
   let newPlayer = {
-    name: document.getElementById("name").value,
-    photo: document.getElementById("photo").value,
-    position: document.getElementById("position").value,
-    nationality: document.getElementById("nationality").value,
-    flag: document.getElementById("flag").value,
-    club: document.getElementById("club").value,
-    logo: document.getElementById("logo").value,
-
+    name: name,
+    photo: photo,
+    position: position,
+    nationality: nationality,
+    flag: flag,
+    club: club,
+    logo: logo,
   };
   const regularPayerStatistic = {
     rating: Number(document.getElementById("rating").value),

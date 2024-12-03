@@ -773,12 +773,76 @@ video {
   height: 100vh;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
 
 .max-h-\[500px\] {
   max-height: 500px;
+}
+
+.max-h-64 {
+  max-height: 16rem;
+}
+
+.max-h-6 {
+  max-height: 1.5rem;
+}
+
+.max-h-48 {
+  max-height: 12rem;
+}
+
+.max-h-4 {
+  max-height: 1rem;
+}
+
+.max-h-56 {
+  max-height: 14rem;
+}
+
+.max-h-5 {
+  max-height: 1.25rem;
+}
+
+.max-h-\[\] {
+  max-height: ;
+}
+
+.max-h-\[\E9\E0\E0px\] {
+  max-height: éààpx;
+}
+
+.max-h-\[200px\] {
+  max-height: 200px;
+}
+
+.max-h-\[\&00px\] {
+  max-height: &00px;
+}
+
+.max-h-\[00px\] {
+  max-height: 00px;
+}
+
+.max-h-\[150px\] {
+  max-height: 150px;
+}
+
+.max-h-\[250px\] {
+  max-height: 250px;
+}
+
+.max-h-\[450px\] {
+  max-height: 450px;
+}
+
+.max-h-\[400px\] {
+  max-height: 400px;
 }
 
 .min-h-\[400px\] {
@@ -1204,6 +1268,12 @@ video {
   outline-offset: 2px;
 }
 
+@media not all and (min-width: 640px) {
+  .max-sm\:overflow-y-auto {
+    overflow-y: auto;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:right-4 {
     right: 1rem;
@@ -1213,12 +1283,20 @@ video {
     display: block;
   }
 
+  .sm\:max-h-\[400px\] {
+    max-height: 400px;
+  }
+
   .sm\:w-48 {
     width: 12rem;
   }
 
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:overflow-y-auto {
+    overflow-y: auto;
   }
 
   .sm\:p-6 {
