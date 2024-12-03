@@ -8,7 +8,7 @@
 
 ## Links
 
-- **Brief Presentation:**[View Presentation]()
+- **Brief Presentation:**[View Presentation](https://www.canva.com/design/DAGYPzs9tBs/axltkLPIa7M2ttVBZx39jg/edit?utm_content=DAGYPzs9tBs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - **Github Backlog:**[View Backlog](https://github.com/orgs/Youcode-Classe-E-2024-2025/projects/48)
 - **GitHub Repository:** [View on GitHub](https://github.com/Youcode-Classe-E-2024-2025/Oumaima_Aitsaid_FUT.git)
 - **Hosted Page:** [View Live](https://oumaima-fut.netlify.app/)
